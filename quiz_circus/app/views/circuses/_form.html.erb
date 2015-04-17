@@ -1,1 +1,24 @@
 
+<% form_for @circus do |t| %> 
+<% if @circus.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@circus.errors.count, "error") %> prohibited
+        this circus from being saved:
+      </h2>
+      <ul>
+        <% @circus.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= t.label :name %>
+  <%= t.text_field :name %>
+  <br>
+  <%= t.label :image_url %>
+  <%= t.text_area :image_url %>
+
+  <%= t.submit %>
+

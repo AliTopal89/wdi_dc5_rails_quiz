@@ -1,0 +1,6 @@
+<h1>Circuses</h1>
+
+<% @circuses.each do |circus| %>
+	<p><%=link_to circus.name, circus_path(circus) %></p>
+	<%= link_to circus.image_url %>
+<% end %>
